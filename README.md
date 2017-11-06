@@ -1,2 +1,2 @@
 # NC-News
-A reddit-type news website.
+The Back-End for a reddit-type news website.

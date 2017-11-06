@@ -1,0 +1,37 @@
+{
+  "name": "northcoders-news-api",
+  "version": "1.0.0",
+  "description": "### Background",
+  "main": "config.js",
+  "scripts": {
+    "test": "mocha spec",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chair": "0.0.0",
+    "chance": "^1.0.4",
+    "env": "0.0.2",
+    "express": "^4.15.5",
+    "log4js": "^1.0.1",
+    "mocha": "^3.5.3",
+    "moment": "^2.17.0",
+    "mongoose": "^4.11.13",
+    "supertest": "^3.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gits92/NC-News-BE"
+  },
+  "bugs": {
+    "url": "https://github.com/gits92/NC-News-BE/issues"
+  },
+  "homepage": "https://github.com/gits92/NC-News-BE#readme",
+  "keywords": []
+}
