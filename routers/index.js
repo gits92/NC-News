@@ -5,7 +5,8 @@ const {
   getAllArticles,
   getAllTopics,
   getArticlesTopicId,
-  getCommentsForArticles
+  getCommentsForArticles,
+  postComment
 } = require("../controllers/");
 
 mongoose.connect("mongodb://localhost:27017/northcoders", {
@@ -19,5 +20,7 @@ router.get("/topics", getAllTopics);
 router.get("/topics/:topic/articles", getArticlesTopicId);
 
 router.get("/articles/:article_id/comments", getCommentsForArticles);
+
+router.post("/articles/:article_id/comments", postComment);
 
 module.exports = router;

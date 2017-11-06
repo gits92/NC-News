@@ -53,5 +53,21 @@ describe("api", () => {
           expect(res.body.comment).to.be.an("array");
         });
     });
+    describe("POST /", function() {
+      it("adds a comments according to the articles with a 200 status code", () => {
+        let test = {
+          comment: "Hey there. This is giving me headache",
+          belongs_to: "football"
+        };
+        return request(app)
+          .post(`/api/articles/${usefulData.articles[0]._id}/comments`)
+          .send(test)
+          .expect(200)
+          .then(res => {
+            expect(res.body).to.be.an("object");
+            expect(usefulData.comments.length).to.equal(2);
+          });
+      }).timeout(8000);
+    });
   });
 });

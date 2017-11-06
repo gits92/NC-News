@@ -35,9 +35,26 @@ function getCommentsForArticles(req, res, next) {
     .catch(err => next(err));
 }
 
+function postComment(req, res, next) {
+  let comment = new Comments({
+    body: req.body.comment,
+    belongs_to: req.params.article_id
+  });
+
+  comment.save(err => {
+    if (err) console.log(err);
+    else {
+      console.log("Posted a new comment");
+      return res.status(200).send("Posted new comment");
+    }
+  });
+  // .catch(err => next(err));
+}
+
 module.exports = {
   getAllArticles,
   getAllTopics,
   getArticlesTopicId,
-  getCommentsForArticles
+  getCommentsForArticles,
+  postComment
 };
