@@ -69,5 +69,25 @@ describe("api", () => {
           });
       }).timeout(8000);
     });
+    describe("PUT /articles/:article_id", () => {
+      it("increments votes on articles by 1", () => {
+        return request(app)
+          .put(`/api/articles/${usefulData.articles[0]._id}?vote=up`)
+          .then(res => {
+            expect(res.body.belongs_to).to.equal("cats");
+            expect(res.body.votes).to.equal(1);
+          });
+      });
+    });
+    describe("PUT /comments/:comment_id", () => {
+      it("increments votes on comments by 1", () => {
+        return request(app)
+          .put(`/api/comments/${usefulData.comments[0]._id}?vote=up`)
+          .then(res => {
+            expect(res.body.created_by).to.equal("northcoder");
+            expect(res.body.votes).to.equal(1);
+          });
+      });
+    });
   });
 });
