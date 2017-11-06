@@ -35,5 +35,14 @@ describe("api", () => {
           expect(res.body.topics.length).to.equal(3);
         });
     });
+    it("sends back correct articles on the topic with a 200 status code", () => {
+      return request(app)
+        .get("/api/topics/football/articles")
+        .expect(200)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.articles).to.be.an("array");
+        });
+    });
   });
 });

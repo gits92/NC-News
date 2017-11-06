@@ -19,7 +19,16 @@ function getAllTopics(req, res, next) {
     .catch(err => next(err));
 }
 
+function getArticlesTopicId(req, res, next) {
+  Articles.find({ belongs_to: req.params.topic })
+    .then(articles => {
+      return res.status(200).send({ articles });
+    })
+    .catch(err => next(err));
+}
+
 module.exports = {
   getAllArticles,
-  getAllTopics
+  getAllTopics,
+  getArticlesTopicId
 };
