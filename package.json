@@ -5,7 +5,9 @@
   "main": "config.js",
   "scripts": {
     "test": "mocha spec",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "seed-db": "node ./seed/seed.js",
+    "seed-test-db": "node ./seed/test.seed.js"
   },
   "author": "",
   "license": "ISC",
