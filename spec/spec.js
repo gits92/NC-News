@@ -44,5 +44,14 @@ describe("api", () => {
           expect(res.body.articles).to.be.an("array");
         });
     });
+    it("sends back correct comments according to the articles with a 200 status code", () => {
+      return request(app)
+        .get("/api/articles/59cccb9c63a45a06c008d9d9/comments")
+        .expect(200)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.comment).to.be.an("array");
+        });
+    });
   });
 });

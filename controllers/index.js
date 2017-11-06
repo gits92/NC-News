@@ -27,8 +27,17 @@ function getArticlesTopicId(req, res, next) {
     .catch(err => next(err));
 }
 
+function getCommentsForArticles(req, res, next) {
+  Comments.find({ belongs_to: req.params.article_id })
+    .then(comment => {
+      return res.status(200).send({ comment });
+    })
+    .catch(err => next(err));
+}
+
 module.exports = {
   getAllArticles,
   getAllTopics,
-  getArticlesTopicId
+  getArticlesTopicId,
+  getCommentsForArticles
 };
