@@ -8,7 +8,9 @@ const {
   getCommentsForArticles,
   postComment,
   voteArticles,
-  voteComments
+  voteComments,
+  deleteComment,
+  getUserData
 } = require("../controllers/");
 
 mongoose.connect("mongodb://localhost:27017/northcoders", {
@@ -28,5 +30,9 @@ router.post("/articles/:article_id/comments", postComment);
 router.put("/articles/:article_id", voteArticles);
 
 router.put("/comments/:comment_id", voteComments);
+
+router.delete("/comments/:comment_id", deleteComment);
+
+router.get("/users/:username", getUserData);
 
 module.exports = router;

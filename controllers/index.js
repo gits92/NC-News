@@ -81,6 +81,22 @@ function voteComments(req, res, next) {
     });
 }
 
+function deleteComment(req, res, next) {
+  Comments.findByIdAndRemove(req.params.comment_id, err => {
+    if (err) console.error(err);
+  });
+  res.send("Comment deleted");
+}
+
+function getUserData(req, res, next) {
+  console.log(req.params.username);
+  Users.find({ username: req.params.username })
+    .then(userinfo => {
+      return res.status(200).send({ userinfo });
+    })
+    .catch(err => next(err));
+}
+
 module.exports = {
   getAllArticles,
   getAllTopics,
@@ -88,5 +104,7 @@ module.exports = {
   getCommentsForArticles,
   postComment,
   voteArticles,
-  voteComments
+  voteComments,
+  deleteComment,
+  getUserData
 };
