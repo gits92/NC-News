@@ -11,6 +11,14 @@ function getAllArticles(req, res, next) {
     .catch(err => next(err));
 }
 
+function getArticleById(req, res, next) {
+  Articles.find({ belongs_to: req.params.article_id })
+    .then(article => {
+      return res.status(200).send({ article });
+    })
+    .catch(err => next(err));
+}
+
 function getAllTopics(req, res, next) {
   Topics.find()
     .then(topics => {
@@ -99,6 +107,7 @@ function getUserData(req, res, next) {
 
 module.exports = {
   getAllArticles,
+  getArticleById,
   getAllTopics,
   getArticlesTopicId,
   getCommentsForArticles,

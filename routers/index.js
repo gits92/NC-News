@@ -3,6 +3,7 @@ const { json } = require("body-parser");
 const mongoose = require("mongoose");
 const {
   getAllArticles,
+  getArticleById,
   getAllTopics,
   getArticlesTopicId,
   getCommentsForArticles,
@@ -18,6 +19,8 @@ mongoose.connect("mongodb://localhost:27017/northcoders", {
 });
 
 router.get("/articles", getAllArticles);
+
+router.get("/articles/:article_id", getArticleById);
 
 router.get("/topics", getAllTopics);
 

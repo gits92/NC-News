@@ -2,8 +2,7 @@ require("dotenv").config();
 module.exports = {
   DB: {
     test: "mongodb://localhost/northcoders-news-api-test",
-    dev:
-      "mongodb://ncnewsbe:northcoderssandeep@ds149855.mlab.com:49855/s-sharda-nc"
+    dev: process.env.MONGO_URL
   },
   PORT: {
     test: 3090,
