@@ -12,7 +12,7 @@ function getAllArticles(req, res, next) {
 }
 
 function getArticleById(req, res, next) {
-  Articles.find({ id: req.params.article_id })
+  Articles.find({ _id: req.params.article_id })
     .then(article => {
       console.log("HELLO");
       return res.status(200).send({ article });
