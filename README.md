@@ -15,7 +15,7 @@ api/topics/:topic/articles
 
 api/articles/:article_id/comments
 
-###Running on a local machine
+# Running on a local machine
 
 
 You need to install/ensure you have the following first: nodejs, npm, git and mongoDB
@@ -44,7 +44,7 @@ then
 
 $ npm start
 
-#Tech Used
+# Tech Used
 
 * Mocha - Javascript test framework
 * Chai - Test assertion library
