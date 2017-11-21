@@ -14,7 +14,6 @@ function getAllArticles(req, res, next) {
 function getArticleById(req, res, next) {
   Articles.find({ _id: req.params.article_id })
     .then(article => {
-      console.log("HELLO");
       return res.status(200).send({ article });
     })
     .catch(err => next(err));

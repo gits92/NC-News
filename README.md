@@ -22,27 +22,23 @@ You need to install/ensure you have the following first: nodejs, npm, git and mo
 
 Once you've confirmed this, run the following in your terminal:
 
-$ git clone https://github.com/gits92/NC-News-BE.git
+`$ git clone https://github.com/gits92/NC-News-BE.git`
 
 Change into the directory where you have cloned this repository.
 
-$ npm install
+`$ npm install`
 
-Split your terminal so you have 3 open and then in one:
+Split your terminal so you have 2 open and then in one:
 
-$ mongod
+`$ mongo`
 
-In another:
+In your other terminal:
 
-$ mongo
-
-In your final terminal:
-
-$ node seed/seed 
+`$ node seed/seed`
 
 then 
 
-$ npm start
+`$ npm start`
 
 # Tech Used
 

@@ -95,7 +95,6 @@ describe("api", () => {
           .del(`/api/comments/${usefulData.comments[0]._id}`)
           .expect(200)
           .then(res => {
-            console.log(res.body);
             expect(res.body).to.be.an("object");
           });
       });
@@ -106,7 +105,6 @@ describe("api", () => {
           .get(`/api/users/${usefulData.user.username}`)
           .expect(200)
           .then(res => {
-            console.log(res.body.userinfo);
             expect(res.body).to.be.an("object");
             expect(res.body.userinfo[0].username).to.equal("northcoder");
           });
